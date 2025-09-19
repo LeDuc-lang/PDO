@@ -10,7 +10,7 @@ function getAllClasses() {
 
 function getClassById($id) {
   $db = dbConnect();
-  $query = $db->prepare('SELECT * FROM classes WHERE id = ?');
+  $query = $db->prepare('SELECT name FROM classes WHERE classes.id = ?');
   $query->execute([$id]);
   $class = $query->fetch();
   return $class;

@@ -6,6 +6,7 @@ require 'models/personnage.php';
 $classes = getAllClasses();
 
 
+
 if ($_POST) {
     $name = $_POST['name'];
     $classe_id = $_POST['classe_id'];

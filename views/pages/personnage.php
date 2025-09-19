@@ -11,7 +11,7 @@
         <form action="">
         <?php foreach ($personnages as $personnage): ?>
             <li>
-                <strong><?php echo htmlspecialchars($personnage['name']); ?></strong> - Classe: <?php echo htmlspecialchars($personnage['class_id']); ?>
+                <strong><?php echo htmlspecialchars($personnage['name']); ?></strong> - Classe: <?php echo htmlspecialchars($personnage['classe_id']); ?>
             </li>
         <?php endforeach; ?>
         </form>
