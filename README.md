@@ -24,3 +24,5 @@ On veut créer un système de gestion des **personnages** et **classes** d’un 
         - XP initialisé à 0
 3. **Bonus**
     - Créer un moteur de recherche permettant de filtrer les personnages par pseudo et classe
+
+    
