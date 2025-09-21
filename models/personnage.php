@@ -1,5 +1,4 @@
 <?php
-// require 'models/_db_connect.php';
 
 function getAllPersonnages() {
   $db = dbConnect();
@@ -16,10 +15,10 @@ function getPersonnageById($id) {
   return $personnage;
 }
 
-function addPersonnage($name, $classe_id) {
+function addPersonnage($name, $classe_id, $atk, $pv, $xp) {
   $db = dbConnect();
-  $query = $db->prepare('INSERT INTO personnages (name, classe_id) VALUES (?, ?)');
-  return $query->execute([$name, $classe_id]);
+  $query = $db->prepare('INSERT INTO personnages (name, classe_id, atk, pv, xp) VALUES (?, ?, ?, ?, ?)');
+  return $query->execute([$name, $classe_id, $atk, $pv, $xp]);
 }
 
 function deletePersonnage($id) {
@@ -28,10 +27,11 @@ function deletePersonnage($id) {
   return $query->execute([$id]);
 }
 
-function updatePersonnageClasse($name, $classe_id) {
+function updatePersonnageClasse($id, $name, $classe_id) {
   $db = dbConnect();
-  $query = $db->prepare('UPDATE personnages SET classe_id = ? WHERE name = ?');
-  return $query->execute([$classe_id, $name]);
+  $query = $db->prepare('UPDATE personnages SET classe_id = ?, name = ? WHERE id = ?');
+  return $query->execute([$classe_id, $name, $id]);
 }
+
 
 
